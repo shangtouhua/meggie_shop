@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>商品列表</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="data:text/css;charset=utf-8," data-href="../dist/css/bootstrap-theme.min.css" rel="stylesheet" id="bs-theme-stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+
+
+</head>
+<body>
+<h1>商品分类</h1>
+<table border="1" width="100%">
+    <tr>
+        <td>编号</td>
+        <td>父分类</td>
+        <td>分类名称</td>
+        <td>商品数量</td>
+        <td>操作</td>
+    </tr>
+    <tr th:each="type : ${typesList}">
+        <td th:text="${type.id}">编号</td>
+        <td th:text="${type.pid}">父分类</td>
+        <td th:text="${type.tname}">分类名称</td>
+        <td th:text="${type.gcount}">商品数量</td>
+        <td>删除 编辑</td>
+    </tr>
+</table>
+<!--<div class="container">
+    <div class="col-md-6">
+        <form>
+            <div class="form-group">
+                <label for="username">账号</label>
+                <input type="username" class="form-control" id="username" placeholder="账号">
+            </div>
+            <div class="form-group">
+                <label for="password">密码</label>
+                <input type="password" class="form-control" id="password" placeholder="密码">
+            </div>
+            <div class="form-group">
+                <label for="image">图片</label>
+                <input type="file" id="image">
+            </div>
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox"> 请选择
+                </label>
+            </div>
+            <button type="button" class="btn btn-info">提交</button>
+        </form>
+
+    </div>
+</div>-->
+<!--引入webuploaderCSS-->
+<link rel="stylesheet" type="text/css" href="resources/css/webuploader.css">
+<!--引入webuploaderJS-->
+<script type="text/javascript" src="resources/js/webuploader.js"></script>
+<!--引入jqueryJS-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<!--引入bootstrapJS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>商品列表</title>
+</head>
+<body>
+<h1>商品管理</h1>
+<table border="1" width="100%">
+    <tr>
+        <td>编号</td>
+        <td>父分类</td>
+        <td>分类名称</td>
+        <td>商品数量</td>
+        <td>操作</td>
+    </tr>
+    <tr th:each="good : ${goodsList}">
+        <td th:text="${good.id}">编号</td>
+        <td th:text="${good.title}">父分类</td>
+        <td th:text="${good.ginfo}">分类名称</td>
+        <td th:text="${good.tid}">商品数量</td>
+        <td th:text="${good.allprice}">商品数量</td>
+        <td th:text="${good.price}">商品数量</td>
+        <td th:text="${good.gimage}">商品数量</td>
+
+        <td>删除 编辑</td>
+    </tr>
+</table>
+
+<!--引入webuploaderCSS-->
+<link rel="stylesheet" type="text/css" href="resources/css/webuploader.css">
+<!--引入webuploaderJS-->
+<script type="text/javascript" src="resources/js/webuploader.js"></script>
+<!--引入jqueryJS-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+
+</body>
+</html>
